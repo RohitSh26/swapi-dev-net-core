@@ -4,7 +4,7 @@ using System.Net.Http;
 namespace swapi_dev_net_core.WebClient
 {
     // simplified version on HttpClient
-    public class RestHttpClient
+    public static class RestHttpClient
     {
         // create an asyncronus http client
         public static async Task<T> GetClient<T>(string url, Func<string, T> callback)
