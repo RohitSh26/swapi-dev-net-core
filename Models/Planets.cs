@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace swapi_dev_net_core.Models
 {
-	public class Planets : BaseEntity
+	public class Planet : BaseEntity
 	{
 		[JsonProperty]
 		public string Name {get; set;}

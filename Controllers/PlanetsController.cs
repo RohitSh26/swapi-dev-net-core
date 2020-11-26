@@ -16,7 +16,7 @@ namespace swapi_dev_net_core.Controllers
             _clientService = clientService;
         }
 
-        public async Task<IEnumerable<Planets>> Get()
+        public async Task<IEnumerable<Planet>> Get()
         {
             return await _clientService.GetPlanets();
         }
