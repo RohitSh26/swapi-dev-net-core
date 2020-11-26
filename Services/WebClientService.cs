@@ -10,19 +10,14 @@ namespace swapi_dev_net_core.Services
     {
         string BASE_URL = "https://swapi.dev/api/";
 
-        public Task<IEnumerable<Film>> GetFilms()
+        public async Task<IEnumerable<T>> Get<T>(string resourceName)
         {
-            throw new System.NotImplementedException();
-        }
-
-        public async Task<IEnumerable<Planet>> GetPlanets()
-        {
-            return await WebClient.RestHttpClient.GetClient<IEnumerable<Planet>>(BASE_URL + "planets", (body) => {
+            return await WebClient.RestHttpClient.GetClient<IEnumerable<T>>(BASE_URL + resourceName + "/", (body) => {
 
                 JObject bodyOject = JObject.Parse(body);
 
                 // map JToken to class object and return
-                return bodyOject["results"].ToObject<IEnumerable<Planet>>();
+                return bodyOject["results"].ToObject<IEnumerable<T>>();
             });
         }
     }

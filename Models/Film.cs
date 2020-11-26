@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace swapi_dev_net_core.Models
 {
-    public class Film
+    public class Film : BaseEntity
     {
         [JsonProperty]
         public string Title { get; set; }
@@ -15,6 +15,6 @@ namespace swapi_dev_net_core.Models
         public string Director { get; set; }    
 
         [JsonProperty]
-        IEnumerable<string> Planets {get; set;}
+        public ICollection<string> Planets { get; set; }
     }
 }

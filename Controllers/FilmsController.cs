@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace swapi_dev_net_core.Controllers
 {
-    [Route("/Planets")]
+    [Route("/Films")]
     [ApiController]
-    public class PlanetsController : ControllerBase
+    public class FilmsController : ControllerBase
     {
         private IWebClientService _clientService;
-        public PlanetsController(IWebClientService clientService)
+        public FilmsController(IWebClientService clientService)
         {
             _clientService = clientService;
         }
 
-        public async Task<IEnumerable<Planet>> Get()
+        public async Task<IEnumerable<Film>> Get()
         {
-            return await _clientService.Get<Planet>("planets");
+            return await _clientService.Get<Film>("films");
         }
         
     }
