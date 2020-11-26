@@ -10,6 +10,11 @@ namespace swapi_dev_net_core.Services
     {
         string BASE_URL = "https://swapi.dev/api/planets/";
 
+        public Task<IEnumerable<Film>> GetFilms()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public async Task<IEnumerable<Planet>> GetPlanets()
         {
             return await WebClient.RestHttpClient.GetClient<IEnumerable<Planet>>(BASE_URL, (body) => {

@@ -7,5 +7,7 @@ namespace swapi_dev_net_core.Services
     public interface IWebClientService
     {
         public Task<IEnumerable<Planet>> GetPlanets();
+
+        public Task<IEnumerable<Film>> GetFilms();
     }    
 }
