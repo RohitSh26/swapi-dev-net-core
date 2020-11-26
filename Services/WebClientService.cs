@@ -8,7 +8,7 @@ namespace swapi_dev_net_core.Services
 {
     public class WebClientService : IWebClientService
     {
-        string BASE_URL = "https://swapi.dev/api/planets/";
+        string BASE_URL = "https://swapi.dev/api/";
 
         public Task<IEnumerable<Film>> GetFilms()
         {
@@ -17,7 +17,7 @@ namespace swapi_dev_net_core.Services
 
         public async Task<IEnumerable<Planet>> GetPlanets()
         {
-            return await WebClient.RestHttpClient.GetClient<IEnumerable<Planet>>(BASE_URL, (body) => {
+            return await WebClient.RestHttpClient.GetClient<IEnumerable<Planet>>(BASE_URL + "planets", (body) => {
 
                 JObject bodyOject = JObject.Parse(body);
 
